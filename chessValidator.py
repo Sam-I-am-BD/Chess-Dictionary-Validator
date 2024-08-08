@@ -6,7 +6,7 @@ chessBoard = {'a1': 'bRook', 'a2': 'bKnight', 'a3': 'bBishop', 'a4': 'bQueen', '
               'e1': ' ', 'e2': ' ', 'e3': ' ', 'e4': ' ', 'e5': ' ', 'e6': ' ', 'e7': ' ', 'e8': ' ',
               'f1': ' ', 'f2': ' ', 'f3': ' ', 'f4': ' ', 'f5': ' ', 'f6': ' ', 'f7': ' ', 'f8': ' ',
               'g1': 'wPawn', 'g2': 'wPawn', 'g3': 'wPawn', 'g4': 'wPawn', 'g5': 'wPawn', 'g6': 'wPawn', 'g7': 'wPawn', 'g8': 'wPawn',
-              'h1': 'wRook', 'h2': 'wKnight', 'h3': 'wBishop ', 'h4': 'wQueen', 'h5': 'wKing', 'h6': 'wBishop', 'h7': 'wKnight', 'h8': 'wRook'}
+              'h1': 'wRook', 'h2': 'wKnight', 'h3': 'wBishop', 'h4': 'wQueen', 'h5': 'wKing', 'h6': 'wBishop', 'h7': 'wKnight', 'h8': 'wRook'}
 
 # The main function
 def validboard():
@@ -18,6 +18,7 @@ def validboard():
         kingCheck('white king', 'wKing')
         kingCheck('black king', 'bKing')
         validSpace()
+        validPeice()
         break
 
 # Verifies that each side has only one king.
@@ -57,5 +58,17 @@ def validSpace():
                 
             if int(x[1]) > 8:
                 print('Some peices are not in the correct number space')
-            
+
+# Checks the values of peice names.
+def validPeice():
+    for x in chessBoard.values():
+        WorB = ['w', 'b']
+        names = ['Pawn', 'Rook', 'Bishop', 'Knight', 'Queen', 'King']
+        if x != ' ':
+            if x[0] not in WorB:
+                print('Peices must be named white or black')
+            if x[1:] not in names:
+                print('Peices must be named: ' + str(names))
+    print('The board is valid')
+
 validboard()

@@ -1,3 +1,4 @@
+# A dictionary matrix of a chessboard. Keys are spaces and values are peice names.
 chessBoard = {'a1': 'bRook', 'a2': 'bKnight', 'a3': 'bBishop', 'a4': 'bQueen', 'a5': 'bKing', 'a6': 'bBishop', 'a7': 'bKnight', 'a8': 'bRook',
               'b1': 'bPawn', 'b2': 'bPawn', 'b3': 'bPawn', 'b4': 'bPawn', 'b5': 'bPawn', 'b6': 'bPawn', 'b7': 'bPawn', 'b8': 'bPawn',
               'c1': ' ', 'c2': ' ', 'c3': ' ', 'c4': ' ', 'c5': ' ', 'c6': ' ', 'c7': ' ', 'c8': ' ',
@@ -7,6 +8,7 @@ chessBoard = {'a1': 'bRook', 'a2': 'bKnight', 'a3': 'bBishop', 'a4': 'bQueen', '
               'g1': 'wPawn', 'g2': 'wPawn', 'g3': 'wPawn', 'g4': 'wPawn', 'g5': 'wPawn', 'g6': 'wPawn', 'g7': 'wPawn', 'g8': 'wPawn',
               'h1': 'wRook', 'h2': 'wKnight', 'h3': 'wBishop ', 'h4': 'wQueen', 'h5': 'wKing', 'h6': 'wBishop', 'h7': 'wKnight', 'h8': 'wRook'}
 
+# The main function
 def validboard():
     while True:
         totalPeices('w', 'white peice')
@@ -18,6 +20,7 @@ def validboard():
         validSpace()
         break
 
+# Verifies that each side has only one king.
 def kingCheck(name, peice):
     count = 0
     for x in chessBoard.values():
@@ -25,8 +28,8 @@ def kingCheck(name, peice):
             count = count + 1
     if count < 1 or count > 1 :
         print('Error: ' + name + ' count is invaild')
-        return False
 
+# Counts the number of pawns.
 def peiceCheck(name, peice):
     count = 0
     for x in chessBoard.values():
@@ -34,8 +37,8 @@ def peiceCheck(name, peice):
             count = count + 1
     if count > 8 :
         print('Error: ' + name + ' count is invaild')
-        return False
-        
+
+# Counts the total peices for each side.         
 def totalPeices(letter, name):
     count = 0
     for x in chessBoard.values():
@@ -43,7 +46,8 @@ def totalPeices(letter, name):
             count = count + 1
     if count > 16:
         print('Error: ' + name + ' count is invaild')
-        return False
+
+# Checks that all spaces are valid on the board.
 def validSpace():
     spaces = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
     for x in chessBoard.keys():

@@ -5,7 +5,9 @@ I've been reading Al Sweigart's book Automate the Boring Stuff with Python for t
 
 I started out writing a lot of code that checked the mechanics to verify that my code was logical. I hadn’t written many functions, so I wanted to incorporate them into the program. (and hopefully make the code look a little cleaner) I gained a better understanding of how local variables work and how to return them to global variables. I should have figured out how to use git/GitHub sooner so you can see all of the iterations I when through. Oh well, next time.
 
-I haven’t completed this project yet. I will push the code I have so far and hopefully you can see how I finished this project. I’d really like to make some branches for incomplete validation checks and see if I can merge them. 
+I haven’t completed this project yet. I will push the code I have so far and hopefully you can see how I finished this project. I’m going to make some branches for the last two functions I need and see if I can merge them. 
+
+## Update
 
 I made a couple of branches for the last two functions and was able to merge them. It is nice to visually see the changes I make as I go, another handy feature of github that I was unaware of. I know the last function could have come out a little cleaner. Between learning git, github, and finishing the project, I feel ready to move on to the next thing. 
 

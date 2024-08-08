@@ -4,7 +4,7 @@ chessBoard = {'a1': 'bRook', 'a2': 'bKnight', 'a3': 'bBishop', 'a4': 'bQueen', '
               'd1': ' ', 'd2': ' ', 'd3': ' ', 'd4': ' ', 'd5': ' ', 'd6': ' ', 'd7': ' ', 'd8': ' ',
               'e1': ' ', 'e2': ' ', 'e3': ' ', 'e4': ' ', 'e5': ' ', 'e6': ' ', 'e7': ' ', 'e8': ' ',
               'f1': ' ', 'f2': ' ', 'f3': ' ', 'f4': ' ', 'f5': ' ', 'f6': ' ', 'f7': ' ', 'f8': ' ',
-              'g1': 'wPawn', 'g2': 'wPawn', 'g3': 'wPawn', 'g4': 'wPawn', 'g5': 'wPawn', 'g6': 'wPawn', 'g7': 'wPawn', 'g8': 'wPawn', 'i8': ' ',
+              'g1': 'wPawn', 'g2': 'wPawn', 'g3': 'wPawn', 'g4': 'wPawn', 'g5': 'wPawn', 'g6': 'wPawn', 'g7': 'wPawn', 'g8': 'wPawn',
               'h1': 'wRook', 'h2': 'wKnight', 'h3': 'wBishop ', 'h4': 'wQueen', 'h5': 'wKing', 'h6': 'wBishop', 'h7': 'wKnight', 'h8': 'wRook'}
 
 def validboard():
@@ -15,6 +15,8 @@ def validboard():
         peiceCheck('black pawn', 'bPawn')
         kingCheck('white king', 'wKing')
         kingCheck('black king', 'bKing')
+        validSpace()
+        break
 
 def kingCheck(name, peice):
     count = 0
@@ -42,5 +44,14 @@ def totalPeices(letter, name):
     if count > 16:
         print('Error: ' + name + ' count is invaild')
         return False
-    
+def validSpace():
+    spaces = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    for x in chessBoard.keys():
+        if x != ' ':
+            if x[0] not in spaces:
+                print('Some peices are not in the correct letter space')
+                
+            if int(x[1]) > 8:
+                print('Some peices are not in the correct number space')
+            
 validboard()
